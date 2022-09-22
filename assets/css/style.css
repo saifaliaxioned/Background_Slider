@@ -85,10 +85,12 @@ sub { bottom: -.25em; }
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 body {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: sans-serif;
 }
 
@@ -121,12 +123,26 @@ li {
   height: 100vh;
   z-index: -1;
   opacity: 1;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
   transition: all 1s ease;
 }
 
 .fade-animation{
-  animation: fade 1s;
+  -webkit-animation: fade 1s;
+          animation: fade 1s;
+  -webkit-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
   transition: all 0.8s ease;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fade {
@@ -152,17 +168,22 @@ li {
 .background-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .slider {
   width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   z-index: 2;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
 }
 
 .slide-list { 
@@ -171,25 +192,34 @@ li {
 
 .active-list { 
   display: block;
-  flex-basis: 100%;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+          box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
 .slide-list img {
   width: 100%;
   height: 470px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .controls {
   width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: absolute;
   z-index: 1;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
 }
 
 .btn {
