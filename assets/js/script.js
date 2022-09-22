@@ -25,7 +25,7 @@ prevBtn.addEventListener('click',function () {
 function slider() {
   var activeSlide = document.querySelector('.active-list');
   activeSlide.classList.remove('active-list');
-  slide[counter].classList.add('active-list');
+  slide[counter].classList.add('active-list','fade-animation');
   backgroundImage.src = slideImage[counter].src;
 }
 
